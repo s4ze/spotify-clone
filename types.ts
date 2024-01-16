@@ -31,7 +31,7 @@ export interface Product {
 export interface Price {
     id: string;
     product_id?: string;
-    acrive?: boolean;
+    active?: boolean;
     description?: string;
     unit_amount?: number;
     currency?: string;
