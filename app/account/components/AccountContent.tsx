@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
-import useSubscribeModal from "@/hooks/useSubscribeModal";
 import { useUser } from "@/hooks/useUser";
-import { postData } from "@/libs/helpers";
 import Button from "@/components/Button";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
+import { postData } from "@/libs/helpers";
 
 const AccountContent = () => {
   const router = useRouter();
@@ -17,7 +16,7 @@ const AccountContent = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!loading && !user) {
+    if (!isLoading && !user) {
       router.replace('/');
     }
   }, [isLoading, user, router]);
@@ -26,16 +25,14 @@ const AccountContent = () => {
     setLoading(true);
     try {
       const { url, error } = await postData({
-        url: '/api/create/portal-link'
-      })
+        url: '/api/create-portal-link'
+      });
       window.location.assign(url);
     } catch (error) {
-      if (error) {
-        toast.error((error as Error)?.message);
-      }
+      if (error) return alert((error as Error).message);
     }
     setLoading(false);
-  }
+  };
 
   return (
     <div className="mb-7 px-6">
@@ -52,8 +49,7 @@ const AccountContent = () => {
       )}
       {subscription && (
         <div className="flex flex-col gap-y-4">
-          <p>
-            You are currently on the
+          <p>You are currently on the
             <b> {subscription?.prices?.products?.name} </b>
             plan.
           </p>
@@ -66,7 +62,7 @@ const AccountContent = () => {
           </Button>
         </div>
       )}
-    </div >
+    </div>
   );
 }
 
