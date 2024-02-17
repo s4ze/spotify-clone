@@ -1,3 +1,9 @@
+Клон Spotify, созданный для оттачивания навыков.
+
+<img src="https://github.com/s4ze/spotify-clone/assets/126989735/aab98fd8-5a18-4782-9bc2-7321810ae440" height="360" width="640">
+<img src="https://github.com/s4ze/spotify-clone/assets/126989735/303e5e68-2095-4496-8e31-7237ebf5bdf6" height="360" width="640">
+<img src="https://github.com/s4ze/spotify-clone/assets/126989735/4f83ee08-047f-49af-94c1-b67146bfc7c9" height="360" width="640">
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
